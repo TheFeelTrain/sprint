@@ -1,8 +1,6 @@
-# Sprint.js [![Build Status](https://travis-ci.org/philpl/sprint.svg)](https://travis-ci.org/philpl/sprint)
+# Sprint.js
 
-[![Join the chat at https://gitter.im/philplckthun/sprint](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/philplckthun/sprint?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-**This is a fork of Benjamin De Cock's original repository. Our goal is to push the development of Sprint further and merge back sometime in the future.**
+**This is a fork of Phil Plückthun's fork of Benjamin De Cock's original repository. The goal is to push the development of Sprint further and merge back sometime in the future.**
 
 Sprint is a high-performance, 5KB (gzipped) DOM library for modern browsers. Sprint notably shines on bandwidth and resource constrained devices such as phones and tablets.
 
@@ -14,22 +12,10 @@ $("div").addClass("new").append("<p>Hi Sprint</p>");
 
 ## Installation
 
-Download the [minified version](https://raw.githubusercontent.com/philplckthun/sprint/master/sprint.min.js) and include it in your page.
+Download the [minified version](https://raw.githubusercontent.com/thefeeltrain/sprint/master/sprint.min.js) and include it in your page.
 
 ```html
 <script src="sprint.min.js"></script>
-```
-
-Alternatively you can install Sprint via npm and import it, for example to use it with your existing build system.
-
-```
-npm install sprint-js
-```
-
-There's Bower support as well:
-
-```
-bower install sprint
 ```
 
 ## Philosophy
@@ -40,73 +26,13 @@ Sprint is an alternative—not a replacement—for jQuery. jQuery offers more fe
 
 Sprint relies on newer APIs supported by modern browsers (read: IE10+) and  optimizes a bunch of other things in order to provide you with fast DOM operations.
 
-Here are a few performance tests of some popular methods (Chrome 42, OS X 10.10.3) :
+Here is an example performance of the .add() method (Chrome 68, Linux) :
 
 ### .add()
 
-![jsperf results](http://sprintjs.com/perf-tests/add.png)
+![jsperf results](https://user-images.githubusercontent.com/12601452/44308092-c959de80-a363-11e8-800c-ddd8827d4c6a.png)
 
-[→ View on jsperf](http://jsperf.com/sprint-js-add)
-
-### .attr()
-
-![jsperf results](http://sprintjs.com/perf-tests/attr.png)
-
-[→ View on jsperf](http://jsperf.com/sprint-js-attr)
-
-### .css()
-
-![jsperf results](http://sprintjs.com/perf-tests/css.png)
-
-[→ View on jsperf](http://jsperf.com/sprintjs-css)
-
-### .has()
-
-![jsperf results](http://sprintjs.com/perf-tests/has.png)
-
-[→ View on jsperf](http://jsperf.com/sprint-js-has)
-
-### .map()
-
-![jsperf results](http://sprintjs.com/perf-tests/map.png)
-
-[→ View on jsperf](http://jsperf.com/sprint-js-map)
-
-### .next()
-
-![jsperf results](http://sprintjs.com/perf-tests/next.png)
-
-[→ View on jsperf](http://jsperf.com/sprint-js-next)
-
-### .not()
-
-![jsperf results](http://sprintjs.com/perf-tests/not.png)
-
-[→ View on jsperf](http://jsperf.com/sprint-js-not)
-
-### .parents()
-
-![jsperf results](http://sprintjs.com/perf-tests/parents.png)
-
-[→ View on jsperf](http://jsperf.com/sprint-js-parents)
-
-### .position()
-
-![jsperf results](http://sprintjs.com/perf-tests/position.png)
-
-[→ View on jsperf](http://jsperf.com/sprint-js-position)
-
-### .slice()
-
-![jsperf results](http://sprintjs.com/perf-tests/slice.png)
-
-[→ View on jsperf](http://jsperf.com/sprint-js-slice)
-
-### .text()
-
-![jsperf results](http://sprintjs.com/perf-tests/text.png)
-
-[→ View on jsperf](http://jsperf.com/sprint-js-text)
+[→ View on jsperf](https://jsperf.com/sprint-js-add/18)
 
 Thanks to its reduced feature set, Sprint is also a lot faster to parse and execute (about 40 times faster than jQuery).
 
