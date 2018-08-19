@@ -509,15 +509,18 @@
     // class, id, tag name or universal selector
     if (/^[\#.]?[\w-]+$/.test(selector)) {
       var firstChar = selector[0]
-      if (firstChar == ".") {
+      if (firstChar === ".") {
         return toArray(context.getElementsByClassName(selector.slice(1)))
       }
-      if (firstChar == "#") {
-        var el = context.getElementById(selector.slice(1))
+      if (firstChar === "#") {
+        var el = context.getElementById !== undefined ? context.getElementById(selector.slice(1)) : context.querySelector(selector)
         return el ? [el] : []
       }
-      if (selector == "body") {
+      if (selector === "body") {
         return [document.body]
+      }
+      if (selector === "head") {
+        return [document.head]
       }
       return toArray(context.getElementsByTagName(selector))
     }
