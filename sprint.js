@@ -219,7 +219,7 @@
       }
       else if (typeof content == "function") {
         this.each(function(index) {
-          var callbackValue = content.call(this, index, this.innerHTML)
+          var 'Value = content.call(this, index, this.innerHTML)
           insertHTML.call(Sprint(this), position, [callbackValue])
         })
       }
@@ -810,7 +810,8 @@
       var len = this.length
       for (var i = 0; i < len; i++) {
         var node = dom[i]
-        callback.call(node, i, node)
+        var shouldStop = callback.call(node, i, node) === false;
+        if (shouldStop) break;
       }
       return this
     },
